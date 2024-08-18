@@ -8,10 +8,11 @@ public class Even {
         Cli.greet();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
+        final int winMax = 3;
         int winStreak = 0;
 
-        while (winStreak < 3) {
-            int quest = (int) (Math.random() * 101);
+        while (winStreak < winMax) {
+            final int quest = (int) (Math.random() * 101);
             var rightAnswer = (quest % 2 == 0) ? "yes" : "no";
             if (Engine.isWrong(quest, rightAnswer)) {
                 break;
