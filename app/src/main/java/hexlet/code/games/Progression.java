@@ -9,14 +9,16 @@ public class Progression {
         Cli.greet();
         System.out.println("What number is missing in the progression?");
 
+        final int winMax = 3;
         int winStreak = 0;
 
-        while (winStreak < 3) {
+        while (winStreak < winMax) {
 
-            int firstNum = (int) (Math.random() * 10);
-            int step = (int) (Math.random() * (11 - 1) + 1);
-            int missingNum = (int) (Math.random() * 10);
+            final int firstRan = (int) (Math.random() * 10);
+            final int step = (int) (Math.random() * (11 - 1) + 1);
+            final int missingNum = (int) (Math.random() * 10);
             String[] prog = new String[10];
+            int firstNum = firstRan;
             prog[0] =  firstNum + " ";
 
             for (int i = 1; i < prog.length; i++) {

@@ -20,7 +20,8 @@ public class Engine {
     }
 
     public static void isWin(int winStreak) {
-        if (winStreak == 3) {
+        final int winCount = 3;
+        if (winStreak == winCount) {
             System.out.println("Congratulations, " + Cli.getName() + "!");
         } else {
             System.out.println("Let's try again, " + Cli.getName() + "!");

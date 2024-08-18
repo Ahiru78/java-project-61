@@ -8,14 +8,15 @@ public class Calc {
         Cli.greet();
         System.out.println("What is the result of the expression?");
 
+        final int winMax = 3;
         int winStreak = 0;
         int rightAnswer;
         String quest;
 
-        while (winStreak < 3) {
-            int questNum1 = (int) (Math.random() * 11);
-            int questNum2 = (int) (Math.random() * 11);
-            int randExp = (int) (Math.random() * 3);
+        while (winStreak < winMax) {
+            final int questNum1 = (int) (Math.random() * 11);
+            final int questNum2 = (int) (Math.random() * 11);
+            final int randExp = (int) (Math.random() * 3);
 
             switch (randExp) {
                 case 0 -> {

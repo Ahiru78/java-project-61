@@ -21,17 +21,17 @@ public class App {
                         0 - Exit
                         """);
         Scanner scanChoice = new Scanner(System.in);
-        int choice = scanChoice.nextInt();
+        var choice = scanChoice.next();
         System.out.println("Your choice: " + choice);
 
         switch (choice) {
-            case 0 -> System.out.println("Bye!");
-            case 1 -> Cli.greet();
-            case 2 -> Even.play();
-            case 3 -> Calc.play();
-            case 4 -> GCD.play();
-            case 5 -> Progression.play();
-            case 6 -> Prime.play();
+            case "0" -> System.out.println("Bye!");
+            case "1" -> Cli.greet();
+            case "2" -> Even.play();
+            case "3" -> Calc.play();
+            case "4" -> GCD.play();
+            case "5" -> Progression.play();
+            case "6" -> Prime.play();
             default -> System.out.println("There is no such game. Bye!");
         }
     }

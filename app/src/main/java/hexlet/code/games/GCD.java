@@ -8,11 +8,12 @@ public class GCD {
         Cli.greet();
         System.out.println("Find the greatest common divisor of given numbers.");
 
+        final int winMax = 3;
         int winStreak = 0;
 
-        while (winStreak < 3) {
-            int questNum1 = (int) (Math.random() * 101);
-            int questNum2 = (int) (Math.random() * 101);
+        while (winStreak < winMax) {
+            final int questNum1 = (int) (Math.random() * 101);
+            final int questNum2 = (int) (Math.random() * 101);
 
             var rightAnswer = findGCD(questNum1, questNum2);
             var quest =  questNum1 + " " + questNum2;

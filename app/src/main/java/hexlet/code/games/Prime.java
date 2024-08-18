@@ -8,10 +8,11 @@ public class Prime {
         Cli.greet();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
+        final int winMax = 3;
         int winStreak = 0;
 
-        while (winStreak < 3) {
-            int quest = (int) (Math.random() * 101);
+        while (winStreak < winMax) {
+            final int quest = (int) (Math.random() * 101);
             var rightAnswer = isSimple(quest);
             if (Engine.isWrong(quest, rightAnswer)) {
                 break;
