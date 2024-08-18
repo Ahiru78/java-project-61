@@ -14,7 +14,7 @@ public class Progression {
         while (winStreak < 3) {
 
             int firstNum = (int) (Math.random() * 10);
-            int step = (int) (Math.random() * 10);
+            int step = (int) (Math.random() * (11 - 1) + 1);
             int missingNum = (int) (Math.random() * 10);
             String[] prog = new String[10];
             prog[0] =  firstNum + " ";
