@@ -11,13 +11,14 @@ public class Progression {
 
         final int winMax = 3;
         int winStreak = 0;
+        final int arrayLength = 10;
 
         while (winStreak < winMax) {
 
             final int firstRan = (int) (Math.random() * 10);
             final int step = (int) (Math.random() * (11 - 1) + 1);
             final int missingNum = (int) (Math.random() * 10);
-            String[] prog = new String[10];
+            String[] prog = new String[arrayLength];
             int firstNum = firstRan;
             prog[0] =  firstNum + " ";
 
