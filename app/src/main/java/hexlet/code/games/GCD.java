@@ -8,8 +8,8 @@ public class GCD {
         String[][] gameData = new String[Engine.GAME_ROUNDS][2];
 
         for (int i = 0; i < Engine.GAME_ROUNDS; i++) {
-            int number1 = (int) (Math.random() * 101);
-            int number2 = (int) (Math.random() * 101);
+            final int number1 = (int) (Math.random() * 101);
+            final int number2 = (int) (Math.random() * 101);
             gameData[i][0] = number1 + " " + number2;
             gameData[i][1] = String.valueOf(findGCD(number1, number2));
         }

@@ -9,8 +9,8 @@ public class Calc {
         String[] operators = new String[]{" + ", " - ", " * "};
 
         for (int i = 0; i < Engine.GAME_ROUNDS; i++) {
-            int number1 = (int) (Math.random() * 11);
-            int number2 = (int) (Math.random() * 11);
+            final int number1 = (int) (Math.random() * 11);
+            final int number2 = (int) (Math.random() * 11);
             final int operatorIndex = (int) (Math.random() * 3);
             gameData[i][0] = number1 + operators[operatorIndex] + number2;
             gameData[i][1] = String.valueOf(calculate(number1, number2, operators[operatorIndex]));

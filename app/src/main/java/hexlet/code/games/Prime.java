@@ -8,7 +8,7 @@ public class Prime {
         String[][] gameData = new String[Engine.GAME_ROUNDS][2];
 
         for (int i = 0; i < Engine.GAME_ROUNDS; i++) {
-            int number = (int) (Math.random() * 101);
+            final int number = (int) (Math.random() * 101);
             gameData[i][0] = String.valueOf(number);
             gameData[i][1] = isPrime(number);
         }
