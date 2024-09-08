@@ -1,28 +1,20 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 
 public class Prime {
     public static void play() {
-        Cli.greet();
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        final String description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        String[][] gameData = new String[Engine.GAME_ROUNDS][2];
 
-        final int winMax = 3;
-        int winStreak = 0;
-
-        while (winStreak < winMax) {
-            final int quest = (int) (Math.random() * 101);
-            var rightAnswer = isSimple(quest);
-            if (Engine.isWrong(quest, rightAnswer)) {
-                break;
-            }
-            winStreak++;
+        for (int i = 0; i < Engine.GAME_ROUNDS; i++) {
+            int number = (int) (Math.random() * 101);
+            gameData[i][0] = String.valueOf(number);
+            gameData[i][1] = isPrime(number);
         }
-        Engine.isWin(winStreak);
+        Engine.gameStart(description, gameData);
     }
-
-    public static String isSimple(int number) {
+    public static String isPrime(int number) {
         if (number < 2) {
             return "no";
         }

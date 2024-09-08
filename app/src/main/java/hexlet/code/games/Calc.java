@@ -1,52 +1,28 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 
 public class Calc {
     public static void play() {
-        Cli.greet();
-        System.out.println("What is the result of the expression?");
+        final String description = "What is the result of the expression?";
+        String[][] gameData = new String[Engine.GAME_ROUNDS][2];
+        String[] operators = new String[]{" + ", " - ", " * "};
 
-        final int winMax = 3;
-        int winStreak = 0;
-        int rightAnswer;
-        String quest;
-
-        while (winStreak < winMax) {
-            final int questNum1 = (int) (Math.random() * 11);
-            final int questNum2 = (int) (Math.random() * 11);
-            final int randExp = (int) (Math.random() * 3);
-
-            switch (randExp) {
-                case 0 -> {
-                    rightAnswer = questNum1 + questNum2;
-                    quest = questNum1 + " + " + questNum2;
-                    break;
-                }
-                case 1 -> {
-                    rightAnswer = questNum1 - questNum2;
-                    quest = questNum1 + " - " + questNum2;
-                    break;
-                }
-                case 2 -> {
-                    rightAnswer = questNum1 * questNum2;
-                    quest = questNum1 + " * " + questNum2;
-                    break;
-                }
-                default -> {
-                    System.out.println("Something goes wrong!");
-                    rightAnswer = questNum1 + questNum2;
-                    quest = questNum1 + " + " + questNum2;
-                    break;
-                }
-            }
-
-            if (Engine.isWrong(quest, rightAnswer)) {
-                break;
-            }
-            winStreak++;
+        for (int i = 0; i < Engine.GAME_ROUNDS; i++) {
+            int number1 = (int) (Math.random() * 11);
+            int number2 = (int) (Math.random() * 11);
+            final int operatorIndex = (int) (Math.random() * 3);
+            gameData[i][0] = number1 + operators[operatorIndex] + number2;
+            gameData[i][1] = String.valueOf(calculate(number1, number2, operators[operatorIndex]));
         }
-        Engine.isWin(winStreak);
+        Engine.gameStart(description, gameData);
+    }
+    public static int calculate(int number1, int number2, String operator) {
+        return switch (operator) {
+            case " + " -> number1 + number2;
+            case " - " -> number1 - number2;
+            case " * " -> number1 * number2;
+            default -> 0;
+        };
     }
 }

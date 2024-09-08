@@ -4,27 +4,28 @@ import java.util.Scanner;
 
 public class Engine {
 
-    public static boolean isWrong(Object questNum, Object rightAnswer) {
-        System.out.println("Question: " + questNum);
-        Scanner scanAnswer = new Scanner(System.in);
-        String userAnswer = scanAnswer.next();
-        System.out.println("Your answer: " + userAnswer);
+    public static final int GAME_ROUNDS = 3;
 
-        if (userAnswer.equals(rightAnswer.toString())) {
+    public static void gameStart(String description, String[][] gameData) {
+        Cli.greet();
+        System.out.println(description);
+
+        for (int i = 0; i < GAME_ROUNDS; i++) {
+            var question = gameData[i][0];
+            var correctAnswer = gameData[i][1];
+            System.out.println("Question: " + question);
+            Scanner scanAnswer = new Scanner(System.in);
+            String userAnswer = scanAnswer.next();
+            System.out.println("Your answer: " + userAnswer);
+            if (!userAnswer.equals(correctAnswer)) {
+                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
+                        + correctAnswer + "'.");
+                System.out.println("Let's try again, " + Cli.getName() + "!");
+                return;
+            }
             System.out.println("Correct!");
-            return false;
-        } else {
-            System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + rightAnswer + "'.");
-            return true;
         }
-    }
-
-    public static void isWin(int winStreak) {
-        final int winCount = 3;
-        if (winStreak == winCount) {
-            System.out.println("Congratulations, " + Cli.getName() + "!");
-        } else {
-            System.out.println("Let's try again, " + Cli.getName() + "!");
-        }
+        System.out.println("Congratulations, " + Cli.getName() + "!");
     }
 }
+
