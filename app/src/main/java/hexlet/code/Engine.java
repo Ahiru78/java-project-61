@@ -7,10 +7,15 @@ public class Engine {
     public static final int GAME_ROUNDS = 3;
 
     public static void gameStart(String description, String[][] gameData) {
-        Cli.greet();
-        System.out.println(description);
+        System.out.println("Welcome to the Brain Games!");
+        System.out.println("May I have your name?");
+        Scanner scanName = new Scanner(System.in);
+        var userName = scanName.nextLine();
+        System.out.println("Hello, " + userName + "!");
 
+        System.out.println(description);
         for (int i = 0; i < GAME_ROUNDS; i++) {
+
             var question = gameData[i][0];
             var correctAnswer = gameData[i][1];
             System.out.println("Question: " + question);
@@ -20,12 +25,12 @@ public class Engine {
             if (!userAnswer.equals(correctAnswer)) {
                 System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
                         + correctAnswer + "'.");
-                System.out.println("Let's try again, " + Cli.getName() + "!");
+                System.out.println("Let's try again, " + userName + "!");
                 return;
             }
             System.out.println("Correct!");
         }
-        System.out.println("Congratulations, " + Cli.getName() + "!");
+        System.out.println("Congratulations, " + userName + "!");
     }
 }
 

@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Calc {
     public static void play() {
@@ -9,9 +10,9 @@ public class Calc {
         String[] operators = new String[]{" + ", " - ", " * "};
 
         for (int i = 0; i < Engine.GAME_ROUNDS; i++) {
-            final int number1 = (int) (Math.random() * 11);
-            final int number2 = (int) (Math.random() * 11);
-            final int operatorIndex = (int) (Math.random() * 3);
+            final int number1 = Utils.getRandomInt(1, 10);
+            final int number2 = Utils.getRandomInt(1, 10);
+            final int operatorIndex = Utils.getRandomInt(0, 2);
             gameData[i][0] = number1 + operators[operatorIndex] + number2;
             gameData[i][1] = String.valueOf(calculate(number1, number2, operators[operatorIndex]));
         }
@@ -22,7 +23,8 @@ public class Calc {
             case " + " -> number1 + number2;
             case " - " -> number1 - number2;
             case " * " -> number1 * number2;
-            default -> 0;
+            // У меня не вышло добавить break, так как метод должен что-то возвращать.
+            default -> throw new IllegalStateException("Unexpected value");
         };
     }
 }
