@@ -7,12 +7,12 @@
 
 ## GAMES
 
-[EVEN](https://asciinema.org/a/qjDsyxMGnHNvgIAPpXM76Tybz)
+[![asciicast](https://asciinema.org/a/qjDsyxMGnHNvgIAPpXM76Tybz.svg)](https://asciinema.org/a/qjDsyxMGnHNvgIAPpXM76Tybz)
 
-[CALC](https://asciinema.org/a/3XNstlm6O5RhggvfbnhIB6RB8)
+[![asciicast](https://asciinema.org/a/3XNstlm6O5RhggvfbnhIB6RB8.svg)](https://asciinema.org/a/3XNstlm6O5RhggvfbnhIB6RB8)
 
-[GDC](https://asciinema.org/a/KQSgdEGDlOQhrPTGSplxSxmCh)
+[![asciicast](https://asciinema.org/a/KQSgdEGDlOQhrPTGSplxSxmCh.svg)](https://asciinema.org/a/KQSgdEGDlOQhrPTGSplxSxmCh)
 
-[PROGRESSION](https://asciinema.org/a/loiXQ3xdl3iuPWgD5OQsuoALM)
+[![asciicast](https://asciinema.org/a/loiXQ3xdl3iuPWgD5OQsuoALM.svg)](https://asciinema.org/a/loiXQ3xdl3iuPWgD5OQsuoALM)
 
-[PRIME](https://asciinema.org/a/xWIAIDiLhTVc4ZWs5YcCoIDom)
+[![asciicast](https://asciinema.org/a/xWIAIDiLhTVc4ZWs5YcCoIDom.svg)](https://asciinema.org/a/xWIAIDiLhTVc4ZWs5YcCoIDom)
